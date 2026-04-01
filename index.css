@@ -424,6 +424,8 @@
             nav button {
                 padding: 10px 18px;
                 font-size: 0.9em;
+                display: block;
+                width: 100%;
             }
 
             .container {
@@ -619,5 +621,11 @@
             #contactForm input,
             #contactForm textarea {
                 padding: 8px;
+            }
+
+            .lasu p:last-child {
+                font-size: 0.8em;
+                padding: 5px;
+                border-radius: 5px;
             }
         }
