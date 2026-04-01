@@ -527,13 +527,19 @@
 
         .score-display h4 {
             color: #1e3c72;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .score-display p {
             font-size: 1.5em;
             font-weight: bold;
-            color: #38ef7d;
+            color: #333;
+        }
+
+         #totalScore {
+            font-size: 1em;
+            color: #666;
+            margin-top: 10px;
         }
 
         /* Additional Utility Classes */
@@ -627,5 +633,20 @@
                 font-size: 0.8em;
                 padding: 5px;
                 border-radius: 5px;
+            }
+
+            .score-display {
+                padding: 10px 20px;
+            }
+
+            .score-display h4{
+                font-family: sans-serif;
+                font-size: 13px;
+                margin-top: 25px;
+            }
+
+            #totalScore {
+                font-size: 1em;
+                bottom: 0;
             }
         }
