@@ -675,6 +675,11 @@
         #contactForm input:focus{
             outline: none;
             border: 7px solid #3853ef;
+            opacity: 0.7;
+        }
+
+         #contactForm p {
+            margin-bottom: 3px;
         }
 
         #contactForm textarea {
@@ -716,7 +721,12 @@
         /* media queries for form validation */
         @media (max-width: 480px) {
             #contactForm {
+                width: 90%;
                 padding: 15px;
+            }
+
+            #contactForm textarea {
+                height: 100px;
             }
 
             #contactForm input,
