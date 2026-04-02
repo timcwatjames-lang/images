@@ -654,6 +654,9 @@
             padding: 20px;
             border-radius: 15px;
             margin-top: 20px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;        
         }
 
         #contactForm input,
@@ -663,6 +666,20 @@
             margin-bottom: 15px;
             border: 2px solid #667eea;
             border-radius: 5px;
+        }
+
+         #contactForm input {
+            font-size: 18px;
+        }
+
+        #contactForm input:focus{
+            outline: none;
+            border: 7px solid #3853ef;
+        }
+
+        #contactForm textarea {
+            height: 150px;
+            font-size: 16px;
         }
 
         #contactForm button {
