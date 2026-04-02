@@ -570,6 +570,43 @@
             border-radius: 5px;
         }
 
+         /* Community Link */
+        .group {
+            background: #e0f7fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .group h1 {
+            color: #00796b;
+            margin-bottom: 10px;
+        }
+
+            .group h2 {
+                color: #004d40;
+                margin-bottom: 15px;
+            }
+
+            .group p {
+                color: #555;
+                font-size: 1.1em;
+                margin-bottom: 20px;
+            }
+
+        .community-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: transform 0.3s ease;
+        }
+
         /* Contact Form Styles */
         #contactForm {
             background: #f8f9fa;
