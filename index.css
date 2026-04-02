@@ -772,3 +772,53 @@
                 font-size: 0.9em;
             }
         }
+
+        /* Team members section */
+
+        .members-section {
+            background: #e0f7fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .member-list h2 {
+            color: #00796b;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .member-list ol {
+            list-style: decimal;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .member-list li {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .member-list ol {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .member-list li {
+                width: 100%;
+            }
+
+            .member-list h2 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+                text-align: center;
+                padding: 0 10px;
+            }
+        }
