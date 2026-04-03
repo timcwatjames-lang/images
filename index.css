@@ -639,6 +639,20 @@
             .group h2 {
                 color: #004d40;
                 margin-bottom: 15px;
+                animation-name: slide;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+
+            @keyframes slide {
+                from {
+                     transform: translateX(-10px); 
+                    }
+                to { 
+                    transform: translateX(10px); 
+                }
             }
 
             .group p {
@@ -657,6 +671,13 @@
             text-decoration: none;
             font-size: 1em;
             transition: transform 0.3s ease;
+            border: 2px solid #667eea;
+        }
+
+        /* COMMUNITY LINK Hover Effect */
+        .community-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
         /* Contact Form Styles */
