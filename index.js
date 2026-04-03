@@ -207,23 +207,21 @@
             document.getElementById('totalScore').innerText = totalScore;
         }
 
-
-        // form validation
+        // Form submission handling
         function validateForm() {
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
             if (!name || !email || !message) {
-                alert('Please fill in all fields.');
+                showFormResult('Please complete all fields before sending.', 'error');
                 return false;
             }
 
             if (!isValidEmail(email)) {
-                alert('Please enter a valid email address.');
+                showFormResult('Please enter a valid email address.', 'error');
                 return false;
             }
-
             return true;
         }
 
@@ -231,3 +229,54 @@
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }
+
+        function showFormResult(message, type) {
+            const formResult = document.getElementById('formResult');
+            formResult.textContent = message;
+            formResult.className = type;
+            formResult.style.display = 'block';
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            const payload = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                message: document.getElementById('message').value.trim()
+            };
+
+            fetch('https://formspree.io/f/xaqldkvv', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('contactForm').reset();
+                        showFormResult('✅ Thank you! Your message has been sent.', 'success');
+                    } else {
+                        return response.json().then(data => {
+                            const error = data?.error || 'Submission failed. Please try again.';
+                            throw new Error(error);
+                        });
+                    }
+                })
+                .catch(error => {
+                    showFormResult(error.message || '⚠️ There was a server error. Try again later.', 'error');
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleSubmit);
+            }
+        });
