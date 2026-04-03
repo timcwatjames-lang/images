@@ -833,8 +833,10 @@
             padding: 15px 20px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 200px;
+            width: 300px;
             text-align: center;
+            border: 2px solid #00796b;
+            margin: 10px;
         }
 
         @media (max-width: 700px) {
