@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Master - Learn English from Beginner to Advanced</title>
     <link rel="stylesheet" href="index.css">
-
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
     <header>
-        <h1>📚 English Master</h1>
-        <p>Learn English from Beginner to Advanced Level</p>
+        <div class="header-content">
+            <div>
+                <h1>📚 English Master</h1>
+                <p>Learn English from Beginner to Advanced Level</p>
+            </div>
+            <button id="installBtn" class="install-btn">📥 Install App</button>
+        </div>
     </header>
 
     <nav>
@@ -716,7 +725,23 @@
         </div>
     </div>
 
+    <!--- installation instructions -->
+    <div class="installation-section">
+        <h2>🚀 Installation Instructions</h2>
+        <p>To use and install this app on your device, follow these steps:</p>
+        <ol>
+            <li>Download or clone the project folder to your computer.</li>
+            <li>Open a terminal in the project folder and start a local server. For example: <code>python -m http.server 8000</code></li>
+            <li>Open <code>http://localhost:8000</code> in a modern browser like Chrome or Edge.</li>
+            <li>If the app is installable, the <strong>📥 Install App</strong> button will appear in the header.</li>
+            <li>Click the button and follow the browser prompt to install the app.</li>
+        </ol>
+        <p><em>Note:</em> Opening the file directly with <code>file://</code> usually does not allow PWA installation. Use a local server or host the app on HTTPS.</p>
+        <h3>For Real Device Installation</h3>
+        <p>To install on mobile devices and share the app, deploy it online on HTTPS using services like Netlify, Vercel, or GitHub Pages.</p>
+    </div>
 
+    <!-- Footer Section -->
     <footer>
         <p>📚 English Master - Learn English from Beginner to Advanced</p>
         <p>Created to help learners master English at all levels</p>
