@@ -34,6 +34,35 @@
             margin-top: 5px;
         }
 
+        /* Header Content Layout */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Install Button */
+        .install-btn {
+            display: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .install-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .install-btn:active {
+            transform: scale(0.98);
+        }
+
         /* Navigation */
         nav {
             background: rgba(255, 255, 255, 0.95);
@@ -654,7 +683,7 @@
                     transform: translateX(10px); 
                 }
             }
-
+           
             .group p {
                 color: #555;
                 font-size: 1.1em;
@@ -858,3 +887,87 @@
             }
         }
 
+        /* Installation Instructions */
+        .installation-section {
+            background: #f0f0f0;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border: 2px solid #333;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid #333;
+            box-shadow: 0px 5px 15px black;
+        }
+        
+        .installation-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .installation-section ol {
+            list-style: decimal;
+            padding-left: 20px;
+        }
+
+        .installation-section li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .installation-section p {
+            margin-top: 5px;
+            color: #333;
+        }
+
+        .installation-section h3 {
+            margin-top: 20px;
+            color: #333;
+            background: #000;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            width: fit-content;
+        }
+        /* animation for h3 */
+        .installation-section h3 {
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 480px) {
+
+            .installation-section {
+                padding: 15px;
+                width: 100%;
+            }
+            .installation-section h2 {
+                font-size: 1.2em;
+            }
+
+            .installation-section ol {
+                padding-left: 15px;
+            }
+
+            .installation-section li {
+                font-size: 14px;
+            }
+
+            .installation-section p {
+                font-size: 14px;
+            }
+            .installation-section h3 {
+                font-size: 1.1em;
+            }
+        }
