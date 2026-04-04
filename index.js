@@ -280,3 +280,52 @@
                 contactForm.addEventListener('submit', handleSubmit);
             }
         });
+
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+
+        // PWA Installation Code
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+
+        // Capture the beforeinstallprompt event
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            // Show the install button
+            if (installBtn) {
+                installBtn.style.display = 'block';
+            }
+        });
+
+        // Handle install button click
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    console.log(`User response to the install prompt: ${outcome}`);
+                    deferredPrompt = null;
+                    installBtn.style.display = 'none';
+                }
+            });
+        }
+
+        // Hide install button once app is installed
+        window.addEventListener('appinstalled', () => {
+            console.log('App installed');
+            if (installBtn) {
+                installBtn.style.display = 'none';
+            }
+        });
+
