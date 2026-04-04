@@ -68,6 +68,7 @@
             .install-btn {
                 display: block;
                 margin: 10px auto 0;
+                font-size: 12px;
             }
 
             .header-content {
